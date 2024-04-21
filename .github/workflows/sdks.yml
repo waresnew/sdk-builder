@@ -25,9 +25,10 @@ jobs:
           remove-dotnet: 'true'
           remove-haskell: 'true'
           remove-codeql: 'true'
-          remove-cached-tools: 'true'
+    - name: Check if hub works
+      run: |
+          hub version
     - uses: actions/checkout@v3
-    - uses: geertvdc/setup-hub@master
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
