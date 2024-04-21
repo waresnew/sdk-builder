@@ -27,6 +27,7 @@ jobs:
           remove-codeql: 'true'
           remove-cached-tools: 'true'
     - uses: actions/checkout@v3
+    - uses: geertvdc/setup-hub@master
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
