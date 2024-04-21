@@ -26,10 +26,6 @@ jobs:
           remove-haskell: 'true'
           remove-codeql: 'true'
           remove-cached-tools: 'true'
-    - name: Install hub
-      run: |
-          sudo apt install hub
-          hub version
     - uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -75,6 +71,10 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: Install hub
+        run: |
+          sudo apt install hub
+          hub version
       - uses: actions/checkout@v3
       - name: Download artifacts
         uses: actions/download-artifact@v3
