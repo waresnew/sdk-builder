@@ -95,7 +95,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: 1.0.0
+          tag_name: v1.0.0
           release_name: iOS SDKs
           draft: false
           prerelease: false
@@ -108,4 +108,4 @@ jobs:
           for sdk in sdks/*.zip; do
             sdks+=("-a" "$sdk")
           done
-          hub release edit "${sdks[@]}" -m "iOS SDKs" "1.0.0"
+          hub release edit "${sdks[@]}" -m "iOS SDKs" v1.0.0
